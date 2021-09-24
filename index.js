@@ -26,7 +26,7 @@ const { nextISSTimesForMyLocation } = require("./iss");
 
 const getDateData = (nextPass) => {
   nextPass.map(time => {
-    const datetime = new Date(0);
+    const datetime = new Date(time.risetime);
     datetime.setUTCSeconds(time.risetime);
     const duration = time.duration;
     console.log(`Next pass at ${datetime} for ${duration} seconds!`);
